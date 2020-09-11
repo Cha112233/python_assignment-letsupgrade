@@ -1,0 +1,21 @@
+try:
+    f = open("file.txt", "r")
+    try:
+        string = f.read()
+        line = f.readline()
+        lines = f.readlines()
+    finally:
+        f.close()
+except IOError:
+    pass
+
+
+try:
+    f = open("file.txt", "w")
+    try:
+        f.write('blah') 
+        f.writelines(lines)
+    finally:
+        f.close()
+except IOError:
+    pass
